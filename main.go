@@ -34,7 +34,7 @@ type BufferCloser struct {
 	R    io.ReadCloser // the wrapped ReadCloser
 }
 
-func (c *BufferCloser) Read(b []byte) (n int, err error) {
+func (c *BufferCloser) Read(b []byte) (n int, err error) {  //this method on strcut is used for getting values not to override/set values
 	n, err = c.R.Read(b)
 	if n > 0 {
 		body := string(b[:n])
